@@ -55,7 +55,7 @@ function getHumanChoice(){
             console.log(`human score: ${humanScore}, computer score:${computerScore}`);
             return {humanScore, computerScore};
         }
-        else if(humanChoice == "scissor" && computerChoice == "paper"){
+        else if(humanChoice == "Scissor" && computerChoice == "Paper"){
             console.log("You Win! Scissor defeats Paper");
             humanScore += 1;
             console.log(`human score: ${humanScore}, computer score:${computerScore}`);
@@ -85,6 +85,8 @@ function getHumanChoice(){
             console.log(`human score: ${humanScore}, computer score:${computerScore}`);
             return {humanScore, computerScore};
         }
+        else
+            return {humanScore, computerScore};
     }
 
 
@@ -93,6 +95,8 @@ function winnerCheck(humanScore, computerScore){
             console.log("loser")
         else if (humanScore > computerScore)
             console.log("Winner")
-        else
+        else if (humanScore == computerScore)
             console.log("draw")
+        else
+            console.log("invalid match ")
     }

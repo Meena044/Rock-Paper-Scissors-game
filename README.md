@@ -27,7 +27,7 @@ Tracking and updating scores across multiple rounds
 Note:  It won’t work by copy-pasting the code directly into the browser console.
 
 1.Clone or download this repository to your local machine. or
-Open using Live Preview
+Open using Live Preview https://meena044.github.io/Rock-Paper-Scissors-game/
 2.Open the index.html file in your browser if cloned this repo
 3.The game will start automatically in the console.
 4.Open the browser developer tools (F12 or right-click → Inspect → Console).
