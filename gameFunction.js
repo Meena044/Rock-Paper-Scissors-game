@@ -29,7 +29,7 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let humanChance= prompt("Enter ur choice: Rock, Paper, Scissor");
+    let humanChance= window.prompt("Enter ur choice: Rock, Paper, Scissor");
     return humanChance;
 }
     
