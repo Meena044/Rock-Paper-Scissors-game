@@ -84,20 +84,18 @@ function playRound(humanChoice, computerChoice){
         console.log(`human score: ${humanScore}, computer score:${computerScore}`);
         return {humanScore, computerScore};
     }
-    else
-        humanScore = "null";
-        computerScore = "null";
+    else{
         return {humanScore, computerScore};
     }
-
+}
 
 function winnerCheck(humanScore, computerScore){
         if(humanScore < computerScore)
             console.log("loser")
         else if (humanScore > computerScore)
             console.log("Winner")
-        else if (humanScore === "null" && computerScore === "null")
-            console.log("invalid match ") 
+        else if (humanScore == " " && computerScore == " ")
+            console.log(`Final Scores: human - ${humanScore}, computer -${computerScore}`);
         else
             console.log("draw match")
-    }
+}
