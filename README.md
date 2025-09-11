@@ -39,7 +39,9 @@ Open using Live Preview (https://meena044.github.io/Rock-Paper-Scissors-game/)
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/db13060e-f43f-4184-a079-364cca3599d5" />
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/05651117-b94b-4e44-90fc-91d9fb099781" />
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b70e786d-9dba-4942-b6f4-55f5df2a4182" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9d72b6b3-f52a-4e9f-a770-8f453a20a46a" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/49cc2952-fe52-4aec-8370-ee80837fe9bd" />
+
+
 
 
 
