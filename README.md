@@ -1,18 +1,24 @@
 # Rock-Paper-Scissors-game
 
-This is a console-based game that allows a user to play against the computer for 5 rounds, keeps track of the score, and announces the overall winner at the end.
+A **Rock-Paper-Scissors game** built using **HTML, CSS, and JavaScript**. This project focuses on **DOM manipulation, event listeners, and basic JavaScript functions**.
 
-**Features**
-
-Plays 5 rounds automatically
-Tracks both player and computer scores
-Logs each round’s outcome to the console
-Announces if user is a winner/loser or a draw match
+## **Features**
+- Interactive **Rock-Paper-Scissors** gameplay
+- Dynamic **score tracking**
+- Responsive **UI design** using HTML & CSS
+- Real-time **DOM updates** for game choices and results
+- Reset game automatically after 5 rounds to 
 
 **Technologies Used**
 
-JavaScript (ES6)
-Browser console (no HTML/CSS or UI)
+- **HTML** – Game structure and layout
+- **CSS** – Styling the UI
+- **JavaScript** – Game logic using:
+  - Functions for game rules
+  - Event listeners for buttons
+  - Event delegation for handling multiple clicks
+  - Mouse events to track player interaction
+  - DOM manipulation to update game results and scores 
 
 **What I Learned**
 
@@ -23,23 +29,16 @@ Comparing strings and handling input case-insensitively
 Tracking and updating scores across multiple rounds
 
 **How to Play**
+## **How to Play**
+1. Open the game in your browser.
+2. Choose **Rock**, **Paper**, or **Scissors**.
+3. The computer will randomly select its choice.
+4. The winner is displayed, and the score is updated.
+   
 
-Note:  It won’t work by copy-pasting the code directly into the browser console.
-
-1.Directly copy the code from "gameFunction.js " and paste it in browser console or 
-Clone or download this repository to your local machine. or 
-Open using Live Preview (https://meena044.github.io/Rock-Paper-Scissors-game/)
-2.Open the index.html file in your browser if cloned this repo
-3.The game will start automatically in the console.
-4.Open the browser developer tools (F12 or right-click → Inspect → Console).
-5.Enter your choice (rock, paper, or scissors) when prompted.You will be prompted to enter your choice 5 times continously
-6.u can check the game score and winner details in the console
-
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/835574aa-26b1-40f2-947c-d8af7b074681" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/db13060e-f43f-4184-a079-364cca3599d5" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/05651117-b94b-4e44-90fc-91d9fb099781" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/b70e786d-9dba-4942-b6f4-55f5df2a4182" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/49cc2952-fe52-4aec-8370-ee80837fe9bd" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/e6c9c403-77ac-49ed-85a7-a5324c8c6b9b" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/c61f42ca-1c11-4f32-b6c2-f88ea16c688a" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/356ef4fa-fdbf-4958-9cb8-fb3c45383c83" />
 
 
 
