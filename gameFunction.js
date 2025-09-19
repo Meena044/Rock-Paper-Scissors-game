@@ -2,19 +2,56 @@ let humanScore=0;
 let computerScore=0;
 let humanSelection;
 let computerSelection;
-playGame();
+let roundcounter=0;
 
-function playGame(){
-    for(let i=1; i <= 5; i++){
-        console.log(`Match ${i} .............`)
-        humanSelection = getHumanChoice();
-        console.log(`Human: ${humanSelection}`);
-        computerSelection = getComputerChoice()
-        console.log(`Computer: ${computerSelection}`);
-    playRound(humanSelection, computerSelection);
-    }
-    winnerCheck(humanScore, computerScore);
-}
+
+let final = document.getElementById('final');
+
+const hover = document.querySelector("#selection");
+hover.addEventListener("mouseover", (e)=> {
+    e.target.style.width = "85%";
+    e.target.style.borderColor = "rgba(243, 147, 225, 1)";
+
+})
+
+const out = document.querySelector("#selection");
+out.addEventListener("mouseout", (e) => {
+    e.target.style.width = "75%";
+    e.target.style.borderColor = "palegoldenrod";
+})
+
+const press = document.querySelector("#selection");
+press.addEventListener("click", (e) => {
+    e.target.style.borderColor = "rgba(173, 241, 164, 1)";
+})
+
+
+const rockBtn = document.querySelector('#rock');
+rockBtn.addEventListener("click", () => {
+    computerSelection = getComputerChoice();
+    playRound("Rock",computerSelection);
+    document.getElementById('human').textContent= `Human Selection = Rock`;
+    document.getElementById('computer').textContent = `Computer Selection = ${computerSelection}`;
+    });
+
+
+const paperBtn = document.querySelector('#paper');
+paperBtn.addEventListener("click", () => {
+    computerSelection = getComputerChoice();
+    playRound("Paper",computerSelection);
+    document.getElementById('human').textContent= `Human Selection = Paper`;
+    document.getElementById('computer').textContent = `Computer Selection = ${computerSelection}`;
+    });
+
+
+const scissorBtn = document.querySelector('#scissor');
+scissorBtn.addEventListener("click",  () => {
+    computerSelection = getComputerChoice();
+    playRound("Scissor",computerSelection);
+    document.getElementById('human').textContent= `Human Selection = Scissor`;
+    document.getElementById('computer').textContent = `Computer Selection = ${computerSelection}`;
+    });
+
 
 function getComputerChoice(){
     let computerChance;
@@ -27,75 +64,61 @@ function getComputerChoice(){
         return computerChance="Scissor";
 }
 
-function getHumanChoice(){
-    let humanChance= window.prompt("Enter ur choice: Rock, Paper, Scissor");
-    return humanChance;
-}
-    
 
 function playRound(humanChoice, computerChoice){
-    if(humanChoice.toLowerCase() === "rock")
-        humanChoice = "Rock";
-    else if(humanChoice.toLowerCase() === "paper")
-        humanChoice = "Paper"
-    else if(humanChoice.toLowerCase() === "scissor")
-        humanChoice = "Scissor"
-    else
-        humanChoice = humanChoice;
 
-    if(humanChoice === computerChoice){
-        console.log("draw");
-        console.log(`human score: ${humanScore}, computer score:${computerScore}`);
-        return {humanScore, computerScore};
-    }
-    else if(humanChoice == "Rock" && computerChoice == "Scissor" ){
-        console.log("You Win! Rock defeats Scissor");
-        humanScore += 1;
-        console.log(`human score: ${humanScore}, computer score:${computerScore}`);
-        return {humanScore, computerScore};
-    }
-    else if(humanChoice == "Scissor" && computerChoice == "Paper"){
-        console.log("You Win! Scissor defeats Paper");
-        humanScore += 1;
-        console.log(`human score: ${humanScore}, computer score:${computerScore}`);
-        return {humanScore, computerScore};
-    }
-    else if(humanChoice == "Paper" && computerChoice == "Rock"){
-        console.log("You Win! Paper defeats Rock");
-        humanScore += 1;
-        console.log(`human score: ${humanScore}, computer score:${computerScore}`);
-        return {humanScore, computerScore};
-    }
-    else if(humanChoice == "Rock" && computerChoice == "Paper"){
-        console.log("oops!!You lose:( Paper defeats Rock");
-        computerScore += 1;
-        console.log(`human score: ${humanScore}, computer score:${computerScore}`);
-        return {humanScore, computerScore};
-    }
-    else if(humanChoice == "Scissor" && computerChoice=="Rock"){
-        console.log("oops!!You lose:( Rock defeats Scissor");
-        computerScore += 1;
-        console.log(`human score: ${humanScore}, computer score:${computerScore}`);
-        return {humanScore, computerScore};
-    }
-    else if(humanChoice == "Paper" && computerChoice=="Scissor"){
-        console.log("oops!!You lose:( Scissor defeats Paper");
-        computerScore += 1;
-        console.log(`human score: ${humanScore}, computer score:${computerScore}`);
-        return {humanScore, computerScore};
-    }
-    else{
-        return {humanScore, computerScore};
-    }
+        const roundResult = document.querySelector(".result");
+        const roundState = document.querySelector(".resultstate");
+
+        if(roundcounter === 0){
+            final.textContent = "";
+        }
+        
+        if(humanChoice === computerChoice){
+            roundResult.textContent="It's a Draw";
+            roundState.textContent=`human score: ${humanScore}, computer score:${computerScore}`;
+            roundResult.style.color = "purple";
+        }
+        else if(humanChoice == "Rock" && computerChoice == "Scissor" || humanChoice == "Scissor" && computerChoice == "Paper" || humanChoice == "Paper" && computerChoice == "Rock"){
+            roundResult.textContent =`You Win! ${humanChoice} defeats ${computerChoice}`;
+            humanScore += 1;
+            roundResult.style.color = "green";
+        }
+        
+        // else if(humanChoice == "Rock" && computerChoice == "Paper" || humanChoice == "Scissor" && computerChoice=="Rock" || humanChoice == "Paper" && computerChoice=="Scissor")
+            
+        else{
+            roundResult.textContent =`oops!! You lose ${computerChoice} defeats ${humanChoice}`;
+            computerScore += 1;
+            roundResult.style.color = "red";
+        }
+        
+        roundState.textContent =`human score: ${humanScore}, computer score:${computerScore}`;
+
+        roundcounter++;
+
+        if(roundcounter===5){
+            winnerCheck(humanScore, computerScore);
+            humanScore =0;
+            computerScore=0; 
+            roundcounter =0; 
+        }
 }
 
 function winnerCheck(humanScore, computerScore){
-        if(humanScore < computerScore)
-            console.log("loser")
-        else if (humanScore > computerScore)
-            console.log("Winner")
-        else if (humanScore == " " && computerScore == " ")
-            console.log(`Final Scores: human - ${humanScore}, computer -${computerScore}`);
-        else
-            console.log("draw match")
+        
+        if(humanScore < computerScore){
+            final.textContent="5 rounds result: Loser";
+            final.style.color = "red";
+        }
+        else if (humanScore > computerScore){
+            const final = document.getElementById('final');
+            final.textContent="5 rounds result:Winner 🏆🥇✨👏";
+            final.style.color = "green";
+        }
+        else{
+            const final = document.getElementById('final');
+            final.textContent="5 rounds result:Draw match";
+            final.style.color = 'purple';
+        }
 }

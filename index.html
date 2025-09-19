@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="gameFunction.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="gameFunction.js" defer></script>
 </head>
 <body>
-    <H2 style="background-color: blanchedalmond;">if prompt doesn't appear automatically refresh the page <br>Press F12 or right click-> inspect </H2>
+    <div id="title">
+        <h1>Rock, Paper & Scissor</h1>
+        <h3>SCORES: <p class="resultstate">First to score 5 points wins the game</p></h3>
+        <p class="result"> Let's go</p>
+        <h2 id="final"></h2>
+    </div>
+
+    <div class="scorecard">
+        <h3 id="human"><span>Human Selection =</span></h3>
+        <h3 id="computer"><span>Computer Selection =</span></h3>
+    </div>
+    
+    <div id="selection">
+        <div class="rocky">
+            <img src="rock.png" id="rock" alt="rock symbol using hands image">
+        </div>
+        <div class="rocky">
+            <img src="paper.png" id="paper" alt="paper symbol using hands image">
+        </div>
+        <div class="rocky">
+            <img src="scissor.png" id="scissor" alt="scissor symbol using hands image">
+        </div>
+    </div>
+   
 </body>
 </html>
